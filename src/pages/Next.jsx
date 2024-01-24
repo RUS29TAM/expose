@@ -41,27 +41,27 @@ const ExposeNav = () => {
         <nav className="expose" id="nav" data-popover>
             <ul>
                 <li>
-                    <a href="#home" title="Home">
+                    <a href={"#home"} title="Home">
                         <span>Home</span>
                     </a>
                 </li>
                 <li>
-                    <a href="#projects" title="Projects">
+                    <a href={"#projects"} title="Projects">
                         <span>Projects</span>
                     </a>
                 </li>
                 <li>
-                    <a href="#contact" title="Contact">
+                    <a href={"#contact"} title="Contact">
                         <span>Contact</span>
                     </a>
                 </li>
                 <li>
-                    <a href="#writing" title="Writing">
+                    <a href={"#writing"} title="Writing">
                         <span>Writing</span>
                     </a>
                 </li>
                 <li>
-                    <a href="#links" title="Links">
+                    <a href={"#links"} title="Links">
                         <span>Links</span>
                     </a>
                 </li>
