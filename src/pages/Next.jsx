@@ -1,5 +1,5 @@
 'use client'
-import '@styles/main.css'
+import '@styles/next.css'
 import React, { useState, useEffect } from 'react';
 
 const Nav = () => {
@@ -190,7 +190,7 @@ const App = () => {
                     <p>Put all your cool links here for your friends.</p>
                 </div>
             </Section>
-            <button onClick={hendleBtnClick} popovertarget='nav'>
+            <button className={'mainBtn'} onClick={hendleBtnClick} popovertarget='nav'>
                 <span className="sr-only">Open Menu</span>
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-6 h-6">
                     <path

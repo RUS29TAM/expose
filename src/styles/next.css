@@ -10,7 +10,7 @@
 }
 
 body {
-    background: url('https://i.redd.it/bwtmgb168k651.jpg');
+    background: url('https://wallpaperaccess.com/full/8642986.gif');
     background-size: cover;
     display: grid;
     grid-template-columns: repeat(var(--grid-size), 1fr);
@@ -160,6 +160,10 @@ body > button:is(:focus-visible) {
 body > button svg {
     width: 75%;
     fill: hsl(0 0% 10%);
+}
+
+.mainBtn {
+    background-color: white;
 }
 
 .sr-only {
