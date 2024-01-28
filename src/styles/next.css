@@ -70,7 +70,6 @@ body {
 .expose {
     position: fixed;
     inset: 0;
-    z-index: 10;
     padding: 0;
 }
 
@@ -102,6 +101,8 @@ a:is(:hover, :focus-visible) span {
     grid-template-columns: repeat(var(--grid-size), 1fr);
     grid-template-rows: repeat(var(--grid-size), 1fr);
     list-style-type: none;
+    animation: animate 5s linear infinite;
+
 }
 
 .expose li {
@@ -117,6 +118,15 @@ li a {
     place-items: center;
 }
 
+@keyframes animate {
+    0% {
+        filter: drop-shadow(0 0 5px #0f0) drop-shadow(0 0 15px #0f0) hue-rotate(0deg);
+    }
+    100% {
+        filter: drop-shadow(0 0 5px #0f0) drop-shadow(0 0 15px #0f0) hue-rotate(360deg);
+    }
+}
+
 h2 {
     font-size: clamp(3rem, 4vw + 1rem, 10rem);
     text-align: center;
@@ -129,7 +139,11 @@ section {
     position: relative;
 }
 
-[data-current=true] { z-index: 2; }
+[data-current=true] {
+    z-index: 10;
+    box-shadow: 0 0 50px #fdfdfd;
+}
+
 
 body > button {
     view-transition-name: launch;
@@ -181,7 +195,7 @@ body > button svg {
 
 nav li:hover a,
 nav a:focus-visible {
-    outline: 0.1rem dashed hsl(210 100% 60%);
+    outline: 0.1rem dotted hsl(210 100% 60%);
     outline-offset: 0.25em;
 }
 
@@ -190,6 +204,7 @@ nav a:focus-visible {
     overflow: hidden;
     position: relative;
     filter: drop-shadow(0.5rem 1rem 1rem hsl(0 0% 10% / 0.75));
+    z-index: -1;
 }
 
 [data-exposed=true] .section__content {
@@ -240,6 +255,7 @@ section:nth-of-type(even) .section__content {
     background: hsl(0 0% 100%);
     color: hsl(0 0% 10%);
 }
+
 section:nth-of-type(even) .section__content h2 {
     background: linear-gradient(90deg, hsl(0 0% 50%), hsl(0 0% 8%), hsl(0 0% 50%));
     color: transparent;
@@ -270,12 +286,15 @@ section:nth-of-type(even) .section__content h2 {
 .section__header span:nth-of-type(1) {
     background: hsl(10 100% 50%);
 }
+
 .section__header span:nth-of-type(2) {
     background: hsl(45 100% 70%);
 }
+
 .section__header span:nth-of-type(3) {
     background: hsl(150 100% 40%);
 }
+
 /* Home */
 :is(li, section):nth-of-type(4) {
     --hue: 150;
@@ -283,6 +302,7 @@ section:nth-of-type(even) .section__content h2 {
     --y: 7;
     --span: 8;
 }
+
 /* Projects */
 :is(li, section):nth-of-type(2) {
     --hue: 210;
@@ -290,6 +310,7 @@ section:nth-of-type(even) .section__content h2 {
     --y: 2;
     --span: 5;
 }
+
 /* Contact */
 :is(li, section):nth-of-type(3) {
     --hue: 280;
@@ -297,6 +318,7 @@ section:nth-of-type(even) .section__content h2 {
     --y: 2;
     --span: 4;
 }
+
 /* Writing */
 :is(li, section):nth-of-type(1) {
     --hue: 320;
@@ -304,6 +326,7 @@ section:nth-of-type(even) .section__content h2 {
     --y: 10;
     --span: 8;
 }
+
 /* Links */
 :is(li, section):nth-of-type(5) {
     --hue: 20;
