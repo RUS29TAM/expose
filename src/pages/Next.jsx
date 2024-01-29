@@ -4,7 +4,7 @@ import React, { useState, useEffect } from 'react';
 
 const Nav = () => {
     return (
-        <nav aria-hidden="true" className="fake-nav">
+        <nav aria-hidden="true" className={"fake-nav"}>
             <ul>
                 <li>
                     <svg className="bear-logo" viewBox="0 0 793 468" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -38,7 +38,7 @@ const Nav = () => {
 
 const ExposeNav = () => {
     return (
-        <nav className="expose" id="nav" data-popover>
+        <nav className={"expose"} id="nav" data-popover>
             <ul>
                 <li>
                     <a href={"#home"} title="Home">

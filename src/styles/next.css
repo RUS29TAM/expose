@@ -141,7 +141,9 @@ section {
 
 [data-current=true] {
     z-index: 10;
-    box-shadow: 0 0 50px #fdfdfd;
+    /*box-shadow: 0 0 50px #fdfdfd;*/
+    /*transition-duration: 2500ms;*/
+
 }
 
 
@@ -193,11 +195,11 @@ body > button svg {
 }
 
 
-nav li:hover a,
-nav a:focus-visible {
-    outline: 0.1rem dotted hsl(210 100% 60%);
-    outline-offset: 0.25em;
-}
+/*nav li:hover a,*/
+/*nav a:focus-visible {*/
+/*    !*outline: 0.1rem dotted hsl(210 100% 60%);*!*/
+/*    outline-offset: 0.25em;*/
+/*}*/
 
 [data-exposed=true] section {
     grid-area: var(--y, 1) / var(--x, 1) / span var(--span, 1) / span var(--span, 1);
@@ -214,6 +216,21 @@ nav a:focus-visible {
     left: 0;
     translate: 0 0;
     transform-origin: 0 0;
+    transition-duration: 2500ms;
+}
+
+[data-exposed=true] li {
+    opacity: 0;
+    animation: fadeIn 0.5s ease-in-out 2.5s forwards;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
 }
 
 .section__content {
@@ -334,3 +351,30 @@ section:nth-of-type(even) .section__content h2 {
     --y: 16;
     --span: 4;
 }
+
+
+/* Добавьте стили анимации для переключения страниц */
+section {
+    transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+    opacity: 1;
+    transform: translateY(-20px);
+}
+
+section[data-current="true"] {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
+/* Добавьте стили анимации для плавного появления/исчезновения навигационных элементов */
+nav {
+    transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+    opacity: 0;
+    transform: translateY(-20px);
+}
+
+body[data-exposed="true"] nav, body[data-exposed="true"] .mainBtn {
+    opacity: 1;
+    transform: translateY(0);
+}
+
