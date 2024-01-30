@@ -72,8 +72,8 @@ const ExposeNav = () => {
 
 const Section = ({id, current, children}) => {
     return (
-        <section id={id} data-current={current}>
-            <div className="section__content">{children}</div>
+        <section  id={id} data-current={current}>{children}
+            {/*<div className="section__content">{children}</div>*/}
         </section>
     );
 };
@@ -135,18 +135,21 @@ const App = () => {
             <Nav />
             <ExposeNav />
             <Section id="#home" current={'true'}>
-                <div className="section__header">
-                    <span></span>
-                    <span></span>
-                    <span></span>
+                <div className="section__content">
+                    <div className="section__header">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                    <h2>App Exposé<br/><span>with View Transitions</span></h2>
+                    <p>Animate grid positions using the View Transitions API. Overlay a nav using the Popover API.
+                        {/* eslint-disable-next-line react/no-unescaped-entities */}
+                        Use <kbd>Esc</kbd> to exit exposé mode or choose a "Tab".</p>
+                    <p>Click the button below!</p>
                 </div>
-                <h2>App Exposé<br /><span>with View Transitions</span></h2>
-                {/* eslint-disable-next-line react/no-unescaped-entities */}
-                <p>Animate grid positions using the View Transitions API. Overlay a nav using the Popover API. Use <kbd>Esc</kbd> to exit exposé mode or choose a "Tab".</p>
-                <p>Click the button below!</p>
             </Section>
             <Section id="#projects">
-                <div className="section__content">
+            <div className="section__content">
                     <div className="section__header">
                         <span></span>
                         <span></span>
