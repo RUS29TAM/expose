@@ -10,7 +10,7 @@
 }
 
 body {
-    background: url('https://wallpaperaccess.com/full/8642986.gif');
+    background: url('https://lifehacker.ru/wp-content/uploads/2016/07/kompukter_1467625860.jpg');
     background-size: cover;
     display: grid;
     grid-template-columns: repeat(var(--grid-size), 1fr);
@@ -197,12 +197,12 @@ body > button svg {
 
 /*nav li:hover a,*/
 /*nav a:focus-visible {*/
-/*    !*outline: 0.1rem dotted hsl(210 100% 60%);*!*/
+/*    outline: 0.1rem dotted hsl(210 100% 60%);*/
 /*    outline-offset: 0.25em;*/
 /*}*/
 
 [data-exposed=true] section {
-    grid-area: var(--y, 1) / var(--x, 1) / span var(--span, 1) / span var(--span, 1) ;
+    grid-area: var(--y, 1) / var(--x, 1) / span var(--span, 1) / span var(--span, 1);
     overflow: hidden;
     position: relative;
     filter: drop-shadow(0.5rem 1rem 1rem hsl(0 0% 10% / 0.75));
@@ -351,6 +351,12 @@ section:nth-of-type(even) .section__content h2 {
     --y: 16;
     --span: 4;
 }
+:is(li, section):nth-of-type(6) {
+    --hue: 40;
+    --x: 8;
+    --y: 3;
+    --span: 3;
+}
 
 
 /* Добавьте стили анимации для переключения страниц */
@@ -375,6 +381,6 @@ nav {
 
 body[data-exposed="true"] nav, body[data-exposed="true"] .mainBtn {
     opacity: 1;
-    transform: translateY(0);
+    transform: translateY(30px);
 }
 

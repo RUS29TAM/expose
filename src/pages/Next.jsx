@@ -23,14 +23,14 @@ const Nav = () => {
                     </svg>
                 </li>
                 <li>
-                    <strong>CodePen</strong>
+                    <strong>Next App</strong>
                 </li>
-                <li>File</li>
-                <li>Edit</li>
-                <li>Find</li>
-                <li>View</li>
-                <li>Tools</li>
-                <li>Window</li>
+                <li style={{cursor: "pointer"}}>File</li>
+                <li style={{cursor: "pointer"}}>Edit</li>
+                <li style={{cursor: "pointer"}}>Find</li>
+                <li style={{cursor: "pointer"}}>View</li>
+                <li style={{cursor: "pointer"}}>Tools</li>
+                <li style={{cursor: "pointer"}}>Window</li>
             </ul>
         </nav>
     );
@@ -65,6 +65,11 @@ const ExposeNav = () => {
                         <span>Links</span>
                     </a>
                 </li>
+                <li>
+                    <a href={"#next"} title="Next">
+                        <span>Next</span>
+                    </a>
+                </li>
             </ul>
         </nav>
     );
@@ -72,7 +77,7 @@ const ExposeNav = () => {
 
 const Section = ({id, current, children}) => {
     return (
-        <section  id={id} data-current={current}>{children}
+        <section id={id} data-current={current}>{children}
             {/*<div className="section__content">{children}</div>*/}
         </section>
     );
@@ -190,6 +195,17 @@ const App = () => {
                         <span></span>
                     </div>
                     <h2>Links</h2>
+                    <p>Put all your cool links here for your friends.</p>
+                </div>
+            </Section>
+            <Section id="#next">
+                <div className="section__content">
+                    <div className="section__header">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                    <h2>Next</h2>
                     <p>Put all your cool links here for your friends.</p>
                 </div>
             </Section>
