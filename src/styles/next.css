@@ -160,12 +160,15 @@ body > button {
     place-items: center;
     cursor: pointer;
     width: 48px;
-    box-shadow: 0 0.5rem 1rem hsl(0 0% 0% / 0.5);
+    /*box-shadow: 0 0.5rem 1rem hsl(0 0% 0% / 0.5);*/
+    animation: animate 5s linear infinite;
+
 }
 
 body > button:is(:focus-visible) {
-    outline: 0.3rem solid hsl(210 100% 60%);
+    outline: 0.3rem solid hsl(155, 100%, 60%);
     outline-offset: 0.25em;
+    animation: none;
 }
 
 [data-exposed=true] > button {
