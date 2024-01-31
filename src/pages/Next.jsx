@@ -100,6 +100,21 @@ const App = () => {
     const hendleBtnClick = () => {
         document.body.dataset.exposed = !exposed;
     }
+    const handleKeyDown = (event) => {
+        if (event.key === 'Escape') {
+            setExposed(false);
+            document.body.dataset.exposed = false;
+        }
+    };
+
+    useEffect(() => {
+        document.addEventListener('keydown', handleKeyDown);
+
+        return () => {
+            document.removeEventListener('keydown', handleKeyDown);
+        };
+    }, [exposed]);
+
 
     const select = (event) => {
         document.querySelectorAll('a').forEach((anchor) => {
@@ -148,8 +163,7 @@ const App = () => {
                     </div>
                     <h2>App Exposé<br/><span>with View Transitions</span></h2>
                     <p>Animate grid positions using the View Transitions API. Overlay a nav using the Popover API.
-                        {/* eslint-disable-next-line react/no-unescaped-entities */}
-                        Use <kbd>Esc</kbd> to exit exposé mode or choose a "Tab".</p>
+                        Use <kbd>Esc</kbd> to exit exposé mode or choose a &quot;Tab&quot;.</p>
                     <p>Click the button below!</p>
                 </div>
             </Section>
@@ -161,8 +175,7 @@ const App = () => {
                         <span></span>
                     </div>
                     <h2>Projects</h2>
-                    {/* eslint-disable-next-line react/no-unescaped-entities */}
-                    <p>Don't forget to show off all of your cool work!</p>
+                    <p>Don&apos;t forget to show off all of your cool work!</p>
                 </div>
             </Section>
             <Section id="#contact">
