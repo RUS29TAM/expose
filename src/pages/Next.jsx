@@ -78,7 +78,6 @@ const ExposeNav = () => {
 const Section = ({id, current, children}) => {
     return (
         <section id={id} data-current={current}>{children}
-            {/*<div className="section__content">{children}</div>*/}
         </section>
     );
 };
@@ -94,9 +93,6 @@ const App = () => {
         setExposed(event ? event.newState === true : false);
     };
 
-    // useEffect(() => {
-    //     document.body.dataset.exposed = exposed;
-    // }, [exposed]);
     const hendleBtnClick = () => {
         document.body.dataset.exposed = !exposed;
     }
